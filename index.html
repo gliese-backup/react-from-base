@@ -35,22 +35,30 @@
 
       function Header({ children }) {
         return (
-          <header className="text-6xl">
-            <h1>{children}</h1>
+          <header className="bg-zinc-100 px-8 py-6 border-b border-zinc-300">
+            <h1 className="text-2xl font-semibold">{children}</h1>
           </header>
         );
       }
 
       function Main() {
-        return <main>Main Section</main>;
+        return (
+          <main className="px-8 py-6 container">
+            <h2 className="text-xl font-bold mb-3">Why? 🤔</h2>
+            <p>
+              React from base is a project that uses React without any other
+              libraries or build tools. In-fact, it doesn't even have any{" "}
+              <code className="font-monospace bg-zinc-300 rounded p-1">
+                package.json
+              </code>
+            </p>
+          </main>
+        );
       }
 
       root.render(
         <React.Fragment>
-          <Header>
-            This is some text that we can use!
-            <span style={{ color: "red" }}>Text</span>
-          </Header>
+          <Header>React From Base</Header>
           <Main />
         </React.Fragment>
       );
