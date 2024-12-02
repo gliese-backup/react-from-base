@@ -42,13 +42,54 @@
       }
 
       function Counter() {
+        let [counter, setCounter] = React.useState(0);
+
         return (
-          <div className="flex text-6xl border border-zinc-600 w-fit p-2 gap-3">
-            <button className="bg-blue-300 rounded-sm">-</button>
-            <p>0</p>
-            <button className="bg-blue-300 rounded-sm">+</button>
+          <div className="flex text-6xl border border-zinc-600 w-fit p-2 gap-3 rounded-lg">
+            <button
+              className="bg-blue-300 rounded-sm"
+              onClick={() => setCounter((preVal) => preVal - 1)}
+            >
+              -
+            </button>
+            <p>{counter}</p>
+            <button
+              className="bg-blue-300 rounded-sm"
+              onClick={() => setCounter((preVal) => preVal + 1)}
+            >
+              +
+            </button>
           </div>
         );
+      }
+
+      function Grid() {
+        const data = [
+          {
+            id: 1,
+            name: "React",
+            description: "A JavaScript library for building user interfaces",
+          },
+          {
+            id: 2,
+            name: "Angular",
+            description:
+              "A TypeScript-based open-source front-end web framework",
+          },
+          {
+            id: 3,
+            name: "Vue",
+            description:
+              "A progressive JavaScript framework for building user interfaces",
+          },
+          {
+            id: 4,
+            name: "Svelte",
+            description: "A compiler for building user interfaces",
+          },
+        ];
+
+        return <div>Grid Component</div>;
       }
 
       function Main() {
@@ -63,6 +104,7 @@
               </code>
             </p>
             <Counter />
+            <Grid />
           </main>
         );
       }
