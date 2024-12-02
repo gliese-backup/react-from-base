@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React From Base</title>
+    <!-- Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/hack.min.css"
+    />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Update Font -->
+    <style>
+      body {
+        font-family: "Hack", monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <!-- Add React -->
+    <script src="https://www.unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+    <!-- Add ReactDOM -->
+    <script src="https://www.unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+    <!-- Add Babel -->
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+
+    <!-- Custom Script -->
+    <script type="text/babel">
+      const rootEl = document.querySelector("#app");
+      const root = ReactDOM.createRoot(rootEl);
+
+      function Header({ children }) {
+        return (
+          <header className="text-6xl">
+            <h1>{children}</h1>
+          </header>
+        );
+      }
+
+      function Main() {
+        return <main>Main Section</main>;
+      }
+
+      root.render(
+        <React.Fragment>
+          <Header>
+            This is some text that we can use!
+            <span style={{ color: "red" }}>Text</span>
+          </Header>
+          <Main />
+        </React.Fragment>
+      );
+    </script>
+  </body>
+</html>
