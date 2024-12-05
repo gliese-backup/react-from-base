@@ -168,6 +168,13 @@
 
       function Page() {
         const [title, setTitle] = React.useState();
+        const reference = React.useRef(null);
+
+        React.useEffect(() => {
+          if (reference.current) {
+            reference.current.focus();
+          }
+        }, []);
 
         return (
           <div>
@@ -181,7 +188,10 @@
                 placeholder="Enter a title"
                 className="border border-stone-400"
                 value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                }}
+                ref={reference}
               />
             </section>
             <Main />
